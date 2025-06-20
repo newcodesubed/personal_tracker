@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+    colors: {
+      grey: {
+        50: var(--color-grey-50),
+        400: var(--color-grey-400),
+        600: var(--color-grey-600),
+        800: var(--color-grey-800),
+      },
+      brand: {
+        600: var(--color-brand-600),
+      },
+    };
+    borderRadius: {
+      sm: var(--border-radius-sm);
+    };
+  }
+  

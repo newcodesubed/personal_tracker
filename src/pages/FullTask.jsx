@@ -1,5 +1,11 @@
+import FullTaskGrid from "../components/task/FullTaskGrid";
+
 function FullTask() {
-  return <div>Full task</div>;
+  return (
+    <>
+      <FullTaskGrid />
+    </>
+  );
 }
 
 export default FullTask;

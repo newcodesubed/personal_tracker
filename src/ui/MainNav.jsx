@@ -50,18 +50,15 @@ function MainNav() {
             label="Home"
           />
         </li>
+
+        <li>
+          <CustomNavLink to="/fulltask" icon={<LuNotebookPen />} label="Task" />
+        </li>
         <li>
           <CustomNavLink
             to="/chats"
             icon={<HiOutlineChartPie />}
-            label="Bookings"
-          />
-        </li>
-        <li>
-          <CustomNavLink
-            to="/fulltask"
-            icon={<LuNotebookPen />}
-            label="Cabins"
+            label="Charts"
           />
         </li>
 

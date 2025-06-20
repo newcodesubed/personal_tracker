@@ -1,19 +1,12 @@
 @import "tailwindcss";
 
-@theme {
-    colors: {
-      grey: {
-        50: var(--color-grey-50),
-        400: var(--color-grey-400),
-        600: var(--color-grey-600),
-        800: var(--color-grey-800),
-      },
-      brand: {
-        600: var(--color-brand-600),
-      },
-    };
-    borderRadius: {
-      sm: var(--border-radius-sm);
-    };
-  }
-  
+/* Define your custom properties */
+:root {
+  --color-grey-50: #f9fafb;
+  --color-grey-400: #9ca3af;
+  --color-grey-600: #4b5563;
+  --color-grey-800: #1f2937;
+  --color-brand-600: #2563eb;
+
+  --border-radius-sm: 0.25rem;
+}

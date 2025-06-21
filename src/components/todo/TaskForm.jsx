@@ -47,18 +47,18 @@ const TaskForm = ({ setTasks }) => {
     });
   };
   return (
-    <header className="app_header">
-      <form onSubmit={handleSubmit}>
+    <header className="flex items-center justify-center border-b border-[#dcdcdc]">
+      <form className="w-[40%]" onSubmit={handleSubmit}>
         <input
           type="text"
           name="task"
           value={taskData.task}
-          className="task_input"
+          className="text-[20px] font-medium bg-[#f9f9f9] text-black border border-[#dfe3e6] rounded-[5px] px-[12px] py-[8px] mb-[15px] w-full placeholder:text-[#686868]"
           placeholder="Enter your task"
           onChange={handleChange}
         />
 
-        <div className="task_form_bottom_line">
+        <div className="flex items-center justify-between">
           <div>
             <Tag
               tagName="HTML"
@@ -86,14 +86,17 @@ const TaskForm = ({ setTasks }) => {
             <select
               name="status"
               value={taskData.status}
-              className="task_status"
+              className="text-[16px] font-medium border border-[#999] rounded-[5px] w-[120px] h-[40px] px-[5px]"
               onChange={handleChange}
             >
               <option value="todo">To do</option>
               <option value="doing">Doing</option>
               <option value="done">Done</option>
             </select>
-            <button type="submit" className="task_submit">
+            <button
+              type="submit"
+              className="text-[16px] font-medium bg-[#6457f9] text-white rounded-[5px] h-[40px] px-[13px] py-[3px] ml-[10px] border-none cursor-pointer"
+            >
               + Add Task
             </button>
           </div>

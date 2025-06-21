@@ -24,7 +24,7 @@ import doneIcon from "./assets/check-mark-button.png";
 
 const oldTasks = localStorage.getItem("tasks");
 
-const App = () => {
+const TodoList = () => {
   const [tasks, setTasks] = useState(JSON.parse(oldTasks) || []);
 
   useEffect(() => {
@@ -37,9 +37,9 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className="grid grid-rows-[150px_auto]">
       <TaskForm setTasks={setTasks} />
-      <main className="app_main">
+      <main className="flex justify-evenly px-[8%] py-[20px]">
         <TaskColumn
           title="To do"
           icon={todoIcon}
@@ -66,4 +66,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default TodoList;

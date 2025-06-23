@@ -1,5 +1,5 @@
 import Tag from "./Tag";
-import deleteIcon from "../assets/delete.png";
+import deleteIcon from "../../assets/delete.png";
 
 const TaskCard = ({ title, tags, handleDelete, index }) => {
   return (

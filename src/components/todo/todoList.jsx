@@ -16,11 +16,12 @@
 // export default TodoList;
 import React, { useState, useEffect } from "react";
 
-import TaskForm from "./components/TaskForm";
-import TaskColumn from "./components/TaskColumn";
-import todoIcon from "./assets/direct-hit.png";
-import doingIcon from "./assets/glowing-star.png";
-import doneIcon from "./assets/check-mark-button.png";
+import TaskForm from "./TaskForm";
+import TaskColumn from "./TaskColumn";
+import todoIcon from "../../assets/direct-hit.png";
+import doingIcon from "../../assets/glowing-star.png";
+import doneIcon from "../../assets/check-mark-button.png";
+import GridTable from "../grid/GridTable";
 
 const oldTasks = localStorage.getItem("tasks");
 
@@ -39,6 +40,7 @@ const TodoList = () => {
   return (
     <div className="grid grid-rows-[150px_auto]">
       <TaskForm setTasks={setTasks} />
+      <GridTable />
       <main className="flex justify-evenly px-[8%] py-[20px]">
         <TaskColumn
           title="To do"

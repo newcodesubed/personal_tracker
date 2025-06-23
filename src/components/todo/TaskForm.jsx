@@ -62,24 +62,15 @@ const TaskForm = ({ setTasks }) => {
         <div className="flex items-center justify-between">
           <div>
             <Tag
-              tagName="HTML"
+              tagName="1"
               selectTag={selectTag}
               selected={checkTag("HTML")}
             />
+            <Tag tagName="2" selectTag={selectTag} selected={checkTag("CSS")} />
             <Tag
-              tagName="CSS"
-              selectTag={selectTag}
-              selected={checkTag("CSS")}
-            />
-            <Tag
-              tagName="JavaScript"
+              tagName="3"
               selectTag={selectTag}
               selected={checkTag("JavaScript")}
-            />
-            <Tag
-              tagName="React"
-              selectTag={selectTag}
-              selected={checkTag("React")}
             />
           </div>
 

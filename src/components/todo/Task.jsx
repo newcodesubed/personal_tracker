@@ -1,5 +1,5 @@
 import { useDraggable } from "@dnd-kit/core";
-
+import deleteIcon from "../../assets/delete.png";
 export default function Task({ task, onDelete, columnId }) {
   const {
     attributes,
@@ -34,8 +34,8 @@ export default function Task({ task, onDelete, columnId }) {
       <span>{task.content}</span>
       <button
         onClick={(e) => {
-          e.stopPropagation(); // ✅ Prevent drag activation
-          e.preventDefault(); // ✅ Prevent default browser behavior
+          e.stopPropagation(); // Prevent drag activation
+          e.preventDefault(); //  Prevent default browser behavior
           onDelete(task.id, columnId);
         }}
         style={{
@@ -48,7 +48,11 @@ export default function Task({ task, onDelete, columnId }) {
         }}
         title="Delete task"
       >
-        🗑️
+        <img
+          src={deleteIcon}
+          className="w-[20px] opacity-50 transition-all duration-300 ease-in-out group-hover:opacity-80"
+          alt=""
+        />
       </button>
     </div>
   );

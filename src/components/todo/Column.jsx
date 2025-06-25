@@ -22,7 +22,12 @@ export default function Column({ column, onDeleteTask }) {
       <h3>{column.title}</h3>
       <div style={{ flexGrow: 1, marginTop: 8 }}>
         {column.tasks.map((task) => (
-          <Task key={task.id} task={task} onDelete={onDeleteTask} />
+          <Task
+            key={task.id}
+            task={task}
+            onDelete={onDeleteTask}
+            columnId={column.id}
+          />
         ))}
       </div>
     </div>

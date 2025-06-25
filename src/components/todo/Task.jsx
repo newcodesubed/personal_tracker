@@ -1,6 +1,6 @@
 import { useDraggable } from "@dnd-kit/core";
 
-export default function Task({ task, onDelete }) {
+export default function Task({ task, onDelete, columnId }) {
   const {
     attributes,
     listeners,
@@ -33,7 +33,11 @@ export default function Task({ task, onDelete }) {
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <span>{task.content}</span>
       <button
-        onClick={() => onDelete(task.id)}
+        onClick={(e) => {
+          e.stopPropagation(); // ✅ Prevent drag activation
+          e.preventDefault(); // ✅ Prevent default browser behavior
+          onDelete(task.id, columnId);
+        }}
         style={{
           marginLeft: 8,
           background: "transparent",

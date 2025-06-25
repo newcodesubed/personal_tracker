@@ -85,6 +85,65 @@ export default function TodoList() {
   const [newTaskContent, setNewTaskContent] = useState("");
   const [selectedColumnId, setSelectedColumnId] = useState(columns[0].id);
 
+  function findTask(id) {
+    for (const col of columns) {
+      const task = col.tasks.find((t) => t.id === id);
+      if (task) return { task, columnId: col.id };
+    }
+    return null;
+  }
+
+  function handleDragStart(event) {
+    setActiveId(event.active.id);
+  }
+
+  function handleDragEnd(event) {
+    const { active, over } = event;
+    setActiveId(null);
+    if (!over || active.id === over.id) return;
+
+    const activeInfo = findTask(active.id);
+    if (!activeInfo) return;
+
+    const overColumn = columns.find((col) => col.id === over.id);
+    const overTaskInfo = findTask(over.id);
+
+    setColumns((cols) => {
+      let newCols = [...cols];
+
+      const fromColIndex = newCols.findIndex(
+        (c) => c.id === activeInfo.columnId
+      );
+      newCols[fromColIndex] = {
+        ...newCols[fromColIndex],
+        tasks: newCols[fromColIndex].tasks.filter((t) => t.id !== active.id),
+      };
+
+      if (overColumn) {
+        const toColIndex = newCols.findIndex((c) => c.id === overColumn.id);
+        newCols[toColIndex] = {
+          ...newCols[toColIndex],
+          tasks: [...newCols[toColIndex].tasks, activeInfo.task],
+        };
+      } else if (overTaskInfo) {
+        const toColIndex = newCols.findIndex(
+          (c) => c.id === overTaskInfo.columnId
+        );
+        const taskIndex = newCols[toColIndex].tasks.findIndex(
+          (t) => t.id === over.id
+        );
+        const newTasks = [...newCols[toColIndex].tasks];
+        newTasks.splice(taskIndex, 0, activeInfo.task);
+        newCols[toColIndex] = {
+          ...newCols[toColIndex],
+          tasks: newTasks,
+        };
+      }
+
+      return newCols;
+    });
+  }
+
   function handleAddTask(e) {
     e.preventDefault();
     const trimmed = newTaskContent.trim();

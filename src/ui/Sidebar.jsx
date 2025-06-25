@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MainNav from "./MainNav";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
-
+import { SlMenu, SlArrowLeft } from "react-icons/sl";
 function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -24,9 +24,9 @@ function Sidebar() {
           )}
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="p-1 text-gray-500 hover:text-gray-800 transition"
+            className="p-1 ml-2 text-gray-500 hover:text-gray-800 transition"
           >
-            {collapsed ? <HiOutlineChevronRight /> : <HiOutlineChevronLeft />}
+            {collapsed ? <SlMenu /> : <HiOutlineChevronLeft />}
           </button>
         </div>
 

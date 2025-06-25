@@ -168,6 +168,19 @@ export default function TodoList() {
     setNewTaskContent("");
   }
 
+  function handleDeleteTask(taskId, columnId) {
+    setColumns((cols) =>
+      cols.map((col) =>
+        col.id === columnId
+          ? {
+              ...col,
+              tasks: col.tasks.filter((task) => task.id !== taskId),
+            }
+          : col
+      )
+    );
+  }
+
   return (
     <>
       <InputForm

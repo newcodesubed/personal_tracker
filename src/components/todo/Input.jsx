@@ -12,7 +12,7 @@ export default function InputForm({
       style={{
         display: "flex",
         padding: 20,
-        backgroundColor: "#222",
+        backgroundColor: "#303030",
         alignItems: "center",
         gap: 8,
       }}
@@ -28,6 +28,8 @@ export default function InputForm({
           borderRadius: 4,
           border: "none",
           fontSize: 16,
+          background: "#535353",
+          color: "#928e8e",
         }}
       />
       <select
@@ -38,6 +40,8 @@ export default function InputForm({
           borderRadius: 4,
           border: "none",
           fontSize: 16,
+          color: "#fff",
+          background: "#535353",
         }}
       >
         {columns.map((col) => (

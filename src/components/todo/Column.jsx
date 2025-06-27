@@ -11,7 +11,7 @@ export default function Column({ column, onDeleteTask }) {
         backgroundColor: isOver ? "#555" : "#333",
         padding: 16,
         borderRadius: 6,
-        width: 220,
+        width: 500,
         minHeight: 120,
         marginRight: 16,
         color: "white",

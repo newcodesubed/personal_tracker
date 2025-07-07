@@ -8,7 +8,7 @@ function Dashboard() {
     getTask().then((data) => console.log(data));
   }, []);
   return (
-    <div>
+    <div className="bg-stone-900">
       <h1>Dashboard</h1>
 
       <TodoList />
